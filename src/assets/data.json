@@ -1,0 +1,6 @@
+[
+    {"id": 1, "tehnology": "Angular1", "version": 1.75},
+    {"id": 2, "tehnology": "Angular2", "version": 5},
+    {"id": 3, "tehnology": "Angular4", "version": 5},
+    {"id": 4, "tehnology": "Angular5", "version": 5}
+]

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TehnologiesService } from './tehnologies.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -17,7 +18,8 @@ import { TehnologyDetailComponent } from './tehnology-detail/tehnology-detail.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [TehnologiesService],
   bootstrap: [AppComponent]

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Tehnology } from './tehnology';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class TehnologiesService {
 
-  constructor() { }
+  private _url = '../assets/data.json';
 
-  getTehnologies() {
-    return [
-      {'id': 1, 'tehnology': 'Angular', 'version': 5},
-      {'id': 2, 'tehnology': 'React', 'version': 5},
-      {'id': 3, 'tehnology': 'es6', 'version': 5},
-      {'id': 4, 'tehnology': 'Angularjs', 'version': 1.75},
-      {'id': 5, 'tehnology': 'nodejs', 'version': 9}
-    ];
+  constructor(private http: HttpClient) { }
+
+  getTehnologies(): Observable<Tehnology[]> {
+    // casting
+    return this.http.get<Tehnology[]>(this._url);
   }
 
 }

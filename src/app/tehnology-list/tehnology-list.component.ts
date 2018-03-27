@@ -13,7 +13,8 @@ export class TehnologyListComponent implements OnInit {
   constructor(private _tehnologyService: TehnologiesService) { }
 
   ngOnInit() {
-    this.tehnologies = this._tehnologyService.getTehnologies();
+    this._tehnologyService.getTehnologies()
+        .subscribe(response => this.tehnologies = response);
   }
 
 }
