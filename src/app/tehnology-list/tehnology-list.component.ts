@@ -9,12 +9,14 @@ import { TehnologiesService } from '../tehnologies.service';
 export class TehnologyListComponent implements OnInit {
 
   public tehnologies = [];
+  public errorMsg;
 
   constructor(private _tehnologyService: TehnologiesService) { }
 
   ngOnInit() {
     this._tehnologyService.getTehnologies()
-        .subscribe(response => this.tehnologies = response);
+        .subscribe(response => this.tehnologies = response,
+                   error =>  this.errorMsg = error);
   }
 
 }
