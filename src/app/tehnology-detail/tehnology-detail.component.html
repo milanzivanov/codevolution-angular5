@@ -2,6 +2,9 @@
   tehnology-detail works!
 </p>
 <h3>{{errorMsg}}</h3>
-<ul *ngFor="let tehnology of tehnologies; let i = index">
-  <li>{{ i+1 }} - {{ tehnology.version }}</li>
+<ul *ngFor="let tehnology of tehnologies;
+            index as i;
+            first as f;
+            even as e">
+  <li>{{e}} => {{f}} = {{ i+1 }} - {{ tehnology.version }}</li>
 </ul>
