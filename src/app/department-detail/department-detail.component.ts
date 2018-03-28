@@ -39,4 +39,11 @@ export class DepartmentDetailComponent implements OnInit {
 
     this.router.navigate(['../', {id: slectedId}], {relativeTo: this.route});
   }
+
+  showOverview() {
+    this.router.navigate(['overview'], { relativeTo: this.route});
+  }
+  showContact() {
+    this.router.navigate(['contact'], { relativeTo: this.route});
+  }
 }
