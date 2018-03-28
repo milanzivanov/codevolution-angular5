@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { DepartmentListComponent } from './department-list/department-list.component';
 // import { EmployeeListComponent } from './employee-list/employee-list.component';
 
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     AppComponent,
     // DepartmentListComponent,
     // EmployeeListComponent
-    routingComponents
+    routingComponents,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
