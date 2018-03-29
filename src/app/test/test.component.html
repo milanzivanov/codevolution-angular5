@@ -11,3 +11,9 @@
 <!-- <h2>{{ window.location.href }}</h2> it is not possible!!! -->
 <!-- <h2>{{ a = 2 + 2 }}</h2>  it is not possible!!! -->
 
+<!-- property binding -->
+<input type="text" [id]="myId" value="Milan">
+<input type="text" id="{{myId}}" value="Milan">
+
+<input [disabled]="isDisabled" type="text" id="{{myId}}" value="Milan">
+
