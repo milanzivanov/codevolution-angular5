@@ -17,3 +17,12 @@
 
 <input [disabled]="isDisabled" type="text" id="{{myId}}" value="Milan">
 
+
+<!-- class binding -->
+
+<h2 class="text-success">Class Binding</h2>
+<h2 [class]="successClass">Class Binding</h2>
+
+<h2 [class]="successClass" class="text-special">Class Binding</h2>
+<h2 [class.text-danger]="hasError">Class Binding</h2>
+<h2 [ngClass]="messageClasses">Class Binding</h2>

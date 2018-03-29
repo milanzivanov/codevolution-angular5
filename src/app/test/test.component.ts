@@ -13,6 +13,16 @@ export class TestComponent implements OnInit {
   public myId = 'testId';
   public isDisabled = false;
 
+  // class binding
+  public successClass = 'text-success';
+  public hasError = false;
+  public isSpecial = true;
+  public messageClasses = {
+    'text-success': !this.hasError,
+    'text-danger': this.hasError,
+    'text-special': this.isSpecial
+  };
+
   constructor() { }
 
   ngOnInit() {
