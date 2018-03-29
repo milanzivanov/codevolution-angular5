@@ -8,24 +8,24 @@ import { DepartmentOverviewComponent } from './department-overview/department-ov
 import { DepartmentContactComponent } from './department-contact/department-contact.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/departments', pathMatch: 'full'},
+  {path: '', redirectTo: 'departments', pathMatch: 'full'},
   {path: 'departments', component: DepartmentListComponent},
   {
     path: 'departments/:id',
     component: DepartmentDetailComponent,
     children: [
-      // {
-      //   path: '', redirectTo: '/overview', pathMatch: 'full'
-      // },
+      {
+        path: '', redirectTo: 'overview', pathMatch: 'full'
+      },
       {
         path: 'overview', component: DepartmentOverviewComponent
       },
       {
         path: 'contact', component: DepartmentContactComponent
       },
-      // {
-      //   path: '**', component: PageNotFoundComponent
-      // }
+      {
+        path: '**', component: PageNotFoundComponent
+      }
     ]
   },
   {path: 'employees', component: EmployeeListComponent},
