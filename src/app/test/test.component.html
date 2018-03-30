@@ -52,3 +52,44 @@
 <input type="text" #myInput>
 <!-- <button (click)="logMsg(myInput.value)">Log</button> -->
 <button (click)="logMsg(myInput)">Log</button>
+
+<!--  Two Way Binding -->
+
+<input type="text" [(ngModel)]="myName">
+{{myName}}
+
+<!-- ngIf Directive -->
+
+<h2 *ngIf="displayName; else elseBlock">
+  ngIf Directive
+</h2>
+<ng-template #elseBlock>
+  <h3>
+    Name is hiddenn_nn!!!
+  </h3>
+</ng-template>
+
+
+<div *ngIf="displayName; then thenBlock; else elseBlock2">
+</div>
+<ng-template #thenBlock>
+  <h1>Milan must success!!!</h1>
+</ng-template>
+<ng-template #elseBlock2>
+  <h5 [style.color]="'red'">No success is not a option!!!</h5>
+</ng-template>
+
+<!--  ngSwitch Directive -->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">You picked red color</div>
+  <div *ngSwitchCase="'blue'">You picked blue color</div>
+  <div *ngSwitchCase="'orange'">You picked orange color</div>
+  <div *ngSwitchDefault>Picked again!!!</div>
+</div>
+
+
+<!-- ngFor Directive -->
+
+<div *ngFor="let color of colors; index as i">
+  <h5>{{i+1}} {{color}}</h5>
+</div>

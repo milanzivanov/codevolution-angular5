@@ -38,6 +38,20 @@ export class TestComponent implements OnInit {
   public magic2 = '';
   public magic3 = '';
 
+  // Two Way Binding
+  public myName = '';
+
+  // *ngIf="
+  displayName = false;
+
+  //  ngSwitch Directive
+  public color = 'blue';
+
+  // ngFor Directive
+  public colors = [
+    'red', 'blue', 'indianred', 'yellow'
+  ];
+
   constructor() { }
 
   ngOnInit() {
