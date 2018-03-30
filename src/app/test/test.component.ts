@@ -61,4 +61,8 @@ export class TestComponent implements OnInit {
     this.magic3 = e.type;
   }
 
+  // template reference variables
+  logMsg(value) {
+    console.log(value);
+  }
 }

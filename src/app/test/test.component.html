@@ -46,3 +46,9 @@
 
 <button (click)="onClick3($event)">event</button>
 {{magic3}}
+
+<!-- template reference variables  -->
+
+<input type="text" #myInput>
+<!-- <button (click)="logMsg(myInput.value)">Log</button> -->
+<button (click)="logMsg(myInput)">Log</button>
