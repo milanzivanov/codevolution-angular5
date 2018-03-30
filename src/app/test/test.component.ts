@@ -23,6 +23,21 @@ export class TestComponent implements OnInit {
     'text-special': this.isSpecial
   };
 
+  // style binding
+
+  public markirano = 'indianred';
+  public titleStyle = {
+    color: 'pink',
+    fontStyle: 'italic',
+    fontWeight: 'bold'
+  };
+
+  // event binding
+
+  public magic = false;
+  public magic2 = '';
+  public magic3 = '';
+
   constructor() { }
 
   ngOnInit() {
@@ -30,6 +45,20 @@ export class TestComponent implements OnInit {
 
   greetUser() {
     return `Hello ${this.name}`;
+  }
+
+  // event binding
+  onClick() {
+    this.magic = !this.magic;
+  }
+
+  onClick2() {
+    this.magic2 = 'Something!!!';
+  }
+
+  onClick3(e) {
+    console.log(e);
+    this.magic3 = e.type;
   }
 
 }

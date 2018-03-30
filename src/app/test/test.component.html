@@ -26,3 +26,23 @@
 <h2 [class]="successClass" class="text-special">Class Binding</h2>
 <h2 [class.text-danger]="hasError">Class Binding</h2>
 <h2 [ngClass]="messageClasses">Class Binding</h2>
+
+<!-- style binding -->
+
+<h3 [style.color]="'orange'">Style binding</h3>
+<h3 [style.fontSize.px]="'30'">Font Size</h3>
+<h3 [style.color]="hasError ? 'red' : 'green'">Style binding</h3>
+<h3 [style.color]="markirano">Style binding 123</h3>
+<h3 [ngStyle]="titleStyle">Style binding 12345</h3>
+
+<!-- event binding -->
+
+<button (click)="onClick()">show/hide</button>
+
+<div *ngIf="magic">I am hire and I am not hire!!!</div>
+
+<button (click)="onClick2()">show name</button>
+{{ magic2 }}
+
+<button (click)="onClick3($event)">event</button>
+{{magic3}}
