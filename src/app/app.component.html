@@ -23,6 +23,8 @@
 
     {{ userModel | json }} -->
 
+    {{ userForm.form.valid }}
+
     <div class="form-group">
       <label>Name</label>
       <input
@@ -62,14 +64,14 @@
           [class.d-none]="email.valid || email.untouched">email is required
         </p> -->
 
-        <!-- kudvenkat awesom staff has this developer -->
+        <!-- kudvenkat intresting staff has this developer -->
         <p
           class="text-danger"
-          *ngIf="email.errors?.required && email.touched">Email is required
+          *ngIf="email?.errors.required && email.touched">Email is required
         </p>
         <p
           class="text-danger"
-          *ngIf="email.errors?.email && email.touched">Email must be valid
+          *ngIf="email?.errors.email && email.touched">Email must be valid
         </p>
 
         <!-- codevolution work-->
@@ -117,14 +119,23 @@
 
     <div class="form-group">
       <select
+        (blur)="validateTopic(topic.value)"
+        (change)="validateTopic(topic.value)"
         class="custom-select"
         [(ngModel)]="userModel.topic"
-        name="topic">
-        <option value="">I am intrested in</option>
+        name="topic"
+        #topic="ngModel"
+        [class.is-invalis]="topicHasError && topic.touched">
+        <option value="default">I am intrested in</option>
         <option *ngFor="let topic of topics">
           {{ topic }}
         </option>
       </select>
+      <small
+        class="text-danger"
+        [class.d-none]="!topicHasError && topic.untouched">
+        Please choose a topic
+      </small>
     </div>
 
     <div class="mb-3">
@@ -165,7 +176,8 @@
 
     <button
       class="btn btn-primary"
-      type="submit">
+      type="submit"
+      [disabled]="userForm.form.invalid || topicHasError">
       Submit form dude
     </button>
 
