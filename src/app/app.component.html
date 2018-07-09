@@ -15,7 +15,10 @@
 
 <div class="container-fluid">
   <h1>Bootcamp Enrollment Form</h1>
-  <form #userForm="ngForm">
+  <form
+    #userForm="ngForm"
+    novalidate
+    (NgSubmit)="onSubmit()">
 
     <!-- {{ userForm.value | json }}
 
@@ -67,11 +70,11 @@
         <!-- kudvenkat intresting staff has this developer -->
         <p
           class="text-danger"
-          *ngIf="email?.errors.required && email.touched">Email is required
+          *ngIf="email?.errors && email.touched">Email is required
         </p>
         <p
           class="text-danger"
-          *ngIf="email?.errors.email && email.touched">Email must be valid
+          *ngIf="email?.errors && email.touched">Email must be valid
         </p>
 
         <!-- codevolution work-->
