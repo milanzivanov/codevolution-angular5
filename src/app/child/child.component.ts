@@ -7,9 +7,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Input() public parentData;
+  @Input() public parentData: string;
 
   @Output() public childEvent = new EventEmitter();
+
+  msg = 'Hey Milan be consistent with Angular!!!';
 
   constructor() { }
 
@@ -17,7 +19,7 @@ export class ChildComponent implements OnInit {
   }
 
   fireEvent() {
-    this.childEvent.emit('Hey Milan be consistent wit Angular!!!');
+    this.childEvent.emit(this.msg);
   }
 
 }
